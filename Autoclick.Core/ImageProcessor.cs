@@ -11,6 +11,7 @@ namespace Autoclick.Core
     public class ImageProcessor
     {
         private readonly List<Pixel> _pixels;
+        private readonly float _downscale;
 
         public IEnumerable<Pixel> Pixels { get => _pixels; }
         public CaptureSettings CaptureSettings { get; set; }
@@ -168,10 +169,9 @@ namespace Autoclick.Core
             return _pixels.Select(x => x.Color).Distinct();
         }
 
-        public void DownScaleImage(int width, int height)
+        public void DownScaleImage(float scale)
         {
-            CaptureSettings.XDimension = width;
-            CaptureSettings.YDimension = height;
+
 
 
         }
